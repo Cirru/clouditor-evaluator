@@ -2,8 +2,6 @@
 [
 [ "clouditor/a" [ "+" "1" [ "+" "2" "3" ] ] ]
 [ "clouditor/b-let" [ "let-bind" "100" [ "\\" [ "x" ] [ "let-bind" [ "*" "x" "2" ] [ "\\" [ "y" ] [ "+" "x" "y" ] ] ] ] ] ]
-[ "clouditor/b-let-2" [ "let" [ [ "x" "100" ] [ "y" [ "*" "x" "2" ] ] ] [ "+" "x" "y" ] ] ]
-[ "clouditor/c-io" [ "\\" [ "io-bind" [ "println" "1" ] [ "\\" [ "io-bind" [ "println" "2" ] [ "\\" [ "io-bind" [ "read-file" "|a.text" ] [ "\\" [ "content" ] [ "println" "content" ] ] ] ] ] ] ] ] ]
-[ "clouditor/c-io-2" [ "\\" [ "io-bind" [ "println" "1" ] [ "\\" [ "println" "2" ] ] [ "\\" [ "read-file" "|a.text" ] ] [ "\\" [ "content" ] [ "println" "content" ] ] ] ] ]
-[ "main" [ "\\" [ "io-bind" [ "return" "clouditor/a" ] [ "\\" [ "return" "clouditor/b-let" ] ] "clouditor/c-io" ] ] ]
+[ "clouditor/c-io" [ "\\" [ "_" ] [ "io-bind" [ "println" "1" ] [ "\\" [ "_" ] [ "io-bind" [ "println" "2" ] [ "\\" [ "_" ] [ "io-bind" [ "read-file" "|a.text" ] [ "\\" [ "content" ] [ "println" "content" ] ] ] ] ] ] ] ] ]
+[ "clouditor/main" [ "\\" [ "_" ] [ "io-bind" [ "return" "clouditor/a" ] [ "\\" [ "_" ] [ "io-bind" [ "return" "clouditor/b-let" ] "clouditor/c-io" ] ] ] ] ]
 ]
